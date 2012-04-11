@@ -117,7 +117,7 @@ include ("GameEngine/Lang/".LANG.".php");
 
                                     <td><?php
 
-                                           $active = mysql_num_rows(mysql_query("SELECT * FROM " . TB_PREFIX . "users WHERE " . time() . "-timestamp < (3600*24) AND tribe!=0 AND tribe!=4 AND tribe!=5"));
+                                           $active = mysql_num_rows(mysql_query("SELECT * FROM " . TB_PREFIX . "users WHERE " . time() . "-timestamp < (3600*24) AND tribe!=0  AND tribe!=5 AND access !=9 AND access !=8"));
                                            echo $active;
 
                                     ?></td>
@@ -132,7 +132,7 @@ include ("GameEngine/Lang/".LANG.".php");
 
                                     <td><?php
 
-                                           $online = mysql_num_rows(mysql_query("SELECT * FROM " . TB_PREFIX . "users WHERE " . time() . "-timestamp < (60*5) AND tribe!=0 AND tribe!=4 AND tribe!=5"));
+                                           $online = mysql_num_rows(mysql_query("SELECT * FROM " . TB_PREFIX . "users WHERE " . time() . "-timestamp < (60*5) AND tribe!=0  AND tribe!=5 AND access !=9 AND access !=8"));
                                            echo $online;
 
                                     ?></td>
