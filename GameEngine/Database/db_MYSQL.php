@@ -2023,8 +2023,8 @@
                 }
             }
 
-            function addMovement($type, $from, $to, $ref, $time, $endtime, $send = 1, $wood = 0, $clay = 0, $iron = 0, $crop = 0) {
-                $q = "INSERT INTO " . TB_PREFIX . "movement values (0,$type,$from,$to,$ref,$time,$endtime,0,$send,$wood,$clay,$iron,$crop)";
+            function addMovement($type, $from, $to, $ref,  $endtime, $send = 1, $wood = 0, $clay = 0, $iron = 0, $crop = 0) {
+                $q = "INSERT INTO " . TB_PREFIX . "movement values (0,$type,$from,$to,$ref,".time().",$endtime,0,$send,$wood,$clay,$iron,$crop)";
                 return mysql_query($q, $this->connection);
             }
 
